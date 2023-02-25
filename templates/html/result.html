@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Result</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="static/css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="static/css/tooplate-crispy-kitchen.css" rel="stylesheet">
+
+     </head>
+
+<body>
+              <nav class="navbar navbar-expand-lg bg-white shadow-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="{{ url_for('about') }}">
+                    Poetry Generator
+                </a>
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ url_for('index') }}">Home</a>#}
+{#                        </li>#}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('about') }}">Poetry Generator</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('correct') }}">Chinese corrector</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('en_correct') }}">English corrector</a>
+                        </li>
+{##}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ url_for('contact') }}">Contact me</a>#}
+{#                        </li>#}
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </nav>
+{#      <p style="color:blue;font-size:20;text-align: center;"><b>Results for Comment</b></p>#}
+
+
+              <section class="about section-padding bg-white">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-2">
+                            <h4 class="mb-3">{{prediction}}</h4>
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </section>
+
+{#      <div class="results">#}
+{#	  <h2 style="color:red;">{{prediction}}</h2>#}
+{#      <h2 style="color:blue;">{{prediction}}</h2>#}
+{#	  </div>#}
+
+             <footer class="site-footer section-padding">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <h4 class="text-white mb-4 me-5">Poetry</h4>
+                    </div>
+
+                    <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Author</h6>
+
+                        <p>Designed by YihuaiHong</p>
+
+                        <a href="https://goo.gl/maps/wZVGLA7q64uC1s886" class="custom-btn btn btn-dark mt-2">Directions</a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Note</h6>
+
+                        <p class="mb-2">PLM : Bert</p>
+
+                        <p>Web Design : python,flask,nginx and echarts</p>
+
+                        <p>Tel: <a href="tel: 010-02-0340" class="tel-link">010-02-0340</a></p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-xs-12 tooplate-mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Open Source</h6>
+
+                        <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-github"></a></li>
+
+{#                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>#}
+{##}
+{#                            <li><a href="#" class="social-icon-link bi-twitter"></a></li>#}
+{##}
+{#                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>#}
+                        </ul>
+
+                        <p class="copyright-text tooplate-mt60">Copyright © Yihuaihong.
+                        <br>Design: <a rel="nofollow" href="https://www.tooplate.com/" target="_blank">Tooplate</a></p>
+
+                    </div>
+
+                </div><!-- row ending -->
+
+             </div><!-- container ending -->
+
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="static/js/jquery.min.js"></script>
+        <script src="static/js/bootstrap.bundle.min.js"></script>
+        <script src="static/js/custom.js"></script>
+</body>
+</html>
