@@ -71,6 +71,8 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                           <li class="nav-item">
                               <a class="nav-link" href="{{ url_for('correct') }}">Chinese corrector</a>
                           </li>
+
+
 {##}
 {#                        <li class="nav-item">#}
 {#                            <a class="nav-link" href="{{ url_for('contact') }}">Contact me</a>#}
@@ -87,14 +89,14 @@ https://www.tooplate.com/view/2129-crispy-kitchen
 
         <main>
 
-            <header class="site-header site-en_correct-header">
+            <header class="site-header site-QA-header">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-lg-10 col-12 mx-auto">
-                            <h1 class="text-white">English corrector</h1>
+                            <h1 class="text-white">Toefl QA Tasks</h1>
 
-                            <strong class="text-white">Write down some words and it will help correct the mistakes</strong>
+                            <strong class="text-white">Simulate the TOEFL exam format and generate corresponding speaking prompts.</strong>
                         </div>
 
                     </div>
@@ -108,25 +110,33 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                     <div class="row">
 
                         <div class="col-lg-6 col-12 mb-2">
-                            <h4 class="mb-3">请在此输入你需要挑错和改错的英文段落</h4>
-                            <h6 class="mb-3">Please write down the English passages where you need to find the errors and correct them here</h6>
+                            <h6 class="mb-3">{{prediction}}</h6>
 
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="about section-padding bg-white">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-2">
+                            <h8 class="mb-3">继续提问，如果你想停止并给出分数的话输入quit即可。</h8>
+                            <h8 class="mb-3">Keep asking, if you want to end it please write down 'quit'.</h8>
 
                         </div>
 
-
-
                         <div class="ml-container">
-                            <form action="{{ url_for('en_correct2')}}" method="POST">
+                            <form action="{{ url_for('QA_predict')}}" method="POST">
                                 <p>在此输入</p>
 		                        <!-- <input type="text" name="comment"/> -->
                                 <textarea name="message" rows="6" cols="150"></textarea>
 		                        <br/>
-                            <input type="submit" class="custom-btn btn btn-danger mt-3 ms-3" value="Correct">
+                            <input type="submit" class="custom-btn btn btn-danger mt-3 ms-3" value="Continue">
                             </form>
                         </div>
-
-
 
 
                     </div>

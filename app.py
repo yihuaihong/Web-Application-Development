@@ -1,15 +1,21 @@
 import flask
 from flask import request,redirect
 app = flask.Flask(__name__, template_folder='templates')
+
 from model.pycorrector import en_spell
+
+
 from model.poetry_generator.dataset import tokenizer
 from model.poetry_generator.model import model
 from model.poetry_generator import settings
 from model.poetry_generator import utils
 from pycorrector.seq2seq.seq2seq_corrector import Seq2SeqCorrector
 
+
 # 加载训练好的模型
 model.load_weights(settings.BEST_MODEL_PATH)
+
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -80,10 +86,42 @@ def en_correct2():
 
     return flask.render_template('html/en_correct2.html', correct_words= corrected_text ,original_words=text,details=details)
 
+@app.route('/runse')
+def runse():
+
+    return flask.render_template('html/runse.html')
+
+@app.route('/runse_predict', methods=['POST'])
+def runse_predict():
+
+    text = request.form.get('message')
+
+    # 文章润色
+    prediction=utils.polish(s=text)
+
+
+    return flask.render_template('html/result_runse.html', prediction=prediction)
+
+@app.route('/QA')
+def QA():
+
+    return flask.render_template('html/QA.html')
+
+@app.route('/QA_predict', methods=['POST'])
+def QA_predict():
+
+    text = request.form.get('message')
+    print('text: ',text)
+    # 文章润色
+    prediction = utils.QA(s=text)
+
+    return flask.render_template('html/QA_result.html', prediction=prediction)
+
 
 @app.route('/')
 def main():
     return(flask.render_template('html/about.html'))
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=1600,threaded=False)
 

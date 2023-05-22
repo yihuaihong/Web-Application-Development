@@ -87,14 +87,14 @@ https://www.tooplate.com/view/2129-crispy-kitchen
 
         <main>
 
-            <header class="site-header site-en_correct-header">
+            <header class="site-header site-QA-header">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-lg-10 col-12 mx-auto">
-                            <h1 class="text-white">English corrector</h1>
+                            <h1 class="text-white">Toefl QA Tasks</h1>
 
-                            <strong class="text-white">Write down some words and it will help correct the mistakes</strong>
+                            <strong class="text-white">Simulate the TOEFL exam format and generate corresponding speaking prompts.</strong>
                         </div>
 
                     </div>
@@ -108,33 +108,25 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                     <div class="row">
 
                         <div class="col-lg-6 col-12 mb-2">
-                            <h4 class="mb-3">请在此输入你需要挑错和改错的英文段落</h4>
-                            <h6 class="mb-3">Please write down the English passages where you need to find the errors and correct them here</h6>
-
+                            <h8 class="mb-3">模型将会作为托福考官，模拟真实环境与你进行对话，并且在每轮对话时都会帮助你纠正语法错误等等。你可以输入quit结束对话，对话结束后模型会依照你的表现给你打1-10分的分数。请先输入简单的自我介绍：e.g.: Hi, I am Tom. I am 21 years old.</h8>
+                            <h8 class="mb-3">The model will act as a TOEFL examiner, simulating a real environment to have a conversation with you, and it will help you correct grammatical errors and other mistakes in each round of the conversation. You can type "quit" to end the conversation. After the conversation is over, the model will give you a score of 1-10 based on your performance.</h8>
 
                         </div>
 
-
-
                         <div class="ml-container">
-                            <form action="{{ url_for('en_correct2')}}" method="POST">
+                            <form action="{{ url_for('QA_predict')}}" method="POST">
                                 <p>在此输入</p>
 		                        <!-- <input type="text" name="comment"/> -->
                                 <textarea name="message" rows="6" cols="150"></textarea>
 		                        <br/>
-                            <input type="submit" class="custom-btn btn btn-danger mt-3 ms-3" value="Correct">
+                            <input type="submit" class="custom-btn btn btn-danger mt-3 ms-3" value="Go!">
                             </form>
                         </div>
-
-
 
 
                     </div>
                 </div>
             </section>
-
-
-
 
         </main>
 
